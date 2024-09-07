@@ -14,14 +14,14 @@ func serverNameHandler(w http.ResponseWriter, r *http.Request) {
         http.Error(w, "No se pudo obtener el nombre del servidor", http.StatusInternalServerError)
         return
     }
-    fmt.Fprintf(w, "v1.2 - Nombre del Servidor: %s \n", serverName)
+    fmt.Fprintf(w, "v2.3 - Nombre del Servidor: %s \n", serverName)
 }
 
 func main() {
     http.HandleFunc("/", serverNameHandler)
 
     // Especifica el puerto en el que el servidor escuchará
-    port := "1582"
+    port := "1683"
     fmt.Printf("Servidor corriendo en el puerto %s\n", port)
     log.Fatal(http.ListenAndServe(":"+port, nil))
 }
